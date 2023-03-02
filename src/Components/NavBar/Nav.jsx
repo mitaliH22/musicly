@@ -1,7 +1,8 @@
 import React from 'react'
-import { Input, Navbar , User  } from './Styled';
+import { Input, Navbar  } from './Styled';
 import {Title} from '../Styled';
-import search from "../../assets/search.png";
+import './NavBar.scss';
+import Auth from '../Login/Auth';
 
 function Nav() {
   return (
@@ -9,10 +10,12 @@ function Nav() {
       <Title align="left">Musicly</Title>
       <div className="search-bar">
         <Input placeholder="Enter Song/Album/Artist"></Input>
-        <img src={search} alt="icon" width="20px" height="20px" />
+        <span className="icons search-btn">
+          <i class="bi bi-search"></i>
+        </span>
       </div>
       <div>
-        <User>John Doe</User>
+        <Auth />
       </div>
     </Navbar>
   );

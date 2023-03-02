@@ -51,26 +51,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
   transform: rotateY(180deg);
 }
 
-tbody{
-  /* background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); */
-  color: white;
-  background: rgb(35,59,182);
-background: radial-gradient(circle, rgba(35,59,182,1) 0%, rgba(115,30,47,1) 100%);
-  overflow: scroll;
-  height: 100px;
-}
-tr{
-    display: grid;
-    grid-template-columns: 6rem 40rem 20rem 9rem;
-    padding: 10px 0;
-    border: 1px solid black;
-}
-.songs{
-    overflow-y: scroll;
-    height: 230px;
-    overflow-x: hidden;
-}
+
 
 .search-bar{
   position: relative;
@@ -82,4 +63,9 @@ tr{
     right: 10px;
     top: 3px;
     padding: 2px;
+}
+
+
+.icons , .login{
+  color: aliceblue;
 }

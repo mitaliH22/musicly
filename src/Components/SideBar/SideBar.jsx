@@ -1,35 +1,45 @@
 import React from "react";
-import styled from "styled-components";
-
+import './SideBar.scss';
+import {Sidebar , Options} from "./Styled"
 function SideBar() {
-  const Sidebar = styled.ul`
-    text-align: left;
-    width: 150px;
-    font-family: "Mukta", sans-serif;
-    margin: 0;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-  `;
-
-  const Options = styled.li`
-    color: white;
-    list-style-type: none;
-    font-family: "Mukta", sans-serif;
-    font-size: 20px;
-    padding: 10px 0;
-    position: ${(props) => props.position || "block"};
-    z-index: 9;
-    background: ${((props) => props.background) || "none"};
-  `;
   return (
     <Sidebar>
-      <Options>Home</Options>
-      <Options>Artists</Options>
-      <Options>Albums</Options>
-      <Options>Trends</Options>
-      <Options>Playlist</Options>
-      <Options>Profile</Options>
+      <Options href="#">
+        <span className="icons">
+          <i class="bi bi-house-door-fill"></i>
+        </span>
+        Home
+      </Options>
+      <Options href="#">
+        <span className="icons">
+          <i class="bi bi-people-fill"></i>
+        </span>
+        Artists
+      </Options>
+      <Options href="#" className="option">
+        <span className="icons">
+          <i class="bi bi-music-note-list"></i>
+        </span>
+        Albums
+      </Options>
+      <Options href="#">
+        <span className="icons">
+          <i class="bi bi-bar-chart-fill"></i>
+        </span>
+        Trends
+      </Options>
+      <Options href="#">
+        <span className="icons">
+          <i class="bi bi-file-earmark-music-fill"></i>
+        </span>
+        Playlist
+      </Options>
+      <Options href="#">
+        <span className="icons">
+          <i class="bi bi-person-fill"></i>
+        </span>
+        Profile
+      </Options>
     </Sidebar>
   );
 }
