@@ -5,7 +5,7 @@ function ButtonIcon(props){
   return (
     <button>
       <span className="icons">
-        <i class={`bi ${props.iconClass}`}></i>
+        <i className={`bi ${props.iconClass}`}></i>
       </span>
     </button>
   );

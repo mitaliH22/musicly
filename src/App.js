@@ -1,27 +1,21 @@
 // import { useEffect , useState } from 'react';
 import './App.css';
-import Albums from './Components/AlbumSlider/Albums';
-import Cards from './Components/Genre/Cards';
-import MusicPlayer from './Components/MusicPlayer/MusicPlayer';
-import Nav from './Components/NavBar/Nav';
-import SideBar from './Components/SideBar/SideBar';
-import Songs from './Components/SongList/Songs';
-import { Container }  from "./Components/Styled";
-
+import { Route, Routes } from "react-router-dom";
+import Dashboard from './layout/Dashboard';
+import Login from './Components/Login/Auth';
+import User from './layout/User';
+import Artists from './layout/Artists';
 
 function App() {
 
   return (
     <div className="App">
-      <Nav />
-      <SideBar />
-      <Container>
-       
-        <Cards />
-        <Songs />
-        <Albums />
-      </Container>
-      <MusicPlayer />
+      <Routes>
+        <Route path='/' element={<Dashboard />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path ='/user' element={<User />}></Route>
+        <Route path='/artists' element={<Artists />}></Route>
+      </Routes>
     </div>
   );
 }

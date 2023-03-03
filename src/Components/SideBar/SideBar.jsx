@@ -1,45 +1,33 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './SideBar.scss';
 import {Sidebar , Options} from "./Styled"
+
+function Menu(props){
+  return (
+    <Link to={props.route} className="sidebar-menu">
+      <Options>
+        <span className="icons">
+          <i className={`bi ${props.iconTitle}`}></i>
+        </span>
+        {props.menuTitle}
+      </Options>
+    </Link>
+  );
+}
 function SideBar() {
   return (
     <Sidebar>
-      <Options href="#">
-        <span className="icons">
-          <i class="bi bi-house-door-fill"></i>
-        </span>
-        Home
-      </Options>
-      <Options href="#">
-        <span className="icons">
-          <i class="bi bi-people-fill"></i>
-        </span>
-        Artists
-      </Options>
-      <Options href="#" className="option">
-        <span className="icons">
-          <i class="bi bi-music-note-list"></i>
-        </span>
-        Albums
-      </Options>
-      <Options href="#">
-        <span className="icons">
-          <i class="bi bi-bar-chart-fill"></i>
-        </span>
-        Trends
-      </Options>
-      <Options href="#">
-        <span className="icons">
-          <i class="bi bi-file-earmark-music-fill"></i>
-        </span>
-        Playlist
-      </Options>
-      <Options href="#">
-        <span className="icons">
-          <i class="bi bi-person-fill"></i>
-        </span>
-        Profile
-      </Options>
+      <Menu route="/" iconTitle="bi-house-door-fill" menuTitle="Home" />
+      <Menu route="/artists" iconTitle="bi-people-fill" menuTitle="Artists" />
+      <Menu route="/" iconTitle="bi-music-note-list" menuTitle="Albums" />
+      <Menu route="/" iconTitle="bi-bar-chart-fill" menuTitle="Trends" />
+      <Menu
+        route="/"
+        iconTitle="bi-file-earmark-music-fill"
+        menuTitle="Playlist"
+      />
+      <Menu route="/user" iconTitle="bi-person-fill" menuTitle="Profile" />
     </Sidebar>
   );
 }

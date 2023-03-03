@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+
 import { Title } from '../Styled';
 import { getCurrentUserProfile } from "../../spotify.js";
-
 
 function Login() {
     const CLIENT_ID = "f32d7d685abd4624a20f043150dee8fa";
@@ -12,7 +13,7 @@ function Login() {
     const [ token , setToken] = useState('');
     const [profile, setProfile] = useState("");
 
-    useEffect(() =>{
+    useEffect(() => {
       const hash = window.location.hash;
       let token = window.localStorage.getItem("token");
 
@@ -26,26 +27,36 @@ function Login() {
         window.location.hash = "";
         window.localStorage.setItem("token", token);
       }
-
       setToken(token);
-      
 
-    } , []);
+      if (token !== '') {
+        const fetchData = async () => {
+          console.log(token, "qUERY cALL");
+          try {
+            const data = await getCurrentUserProfile();
+             setProfile(data);
+             console.log(data, "profile");
+             console.log(3);
+          } catch (e) {
+            console.error(e);
+          }
+        };
+        fetchData();
+      }
+      console.log(1, token);
+    }, [token]);
+
+     
+
+      //  useEffect(() => {
+      //         console.log(2);
+       
+      //     console.log(token, "qUERY cALL23");
+
+         
+      //  }, [token]);
 
 
-    useEffect(() =>{
-      const fetchData = async () => {
-        try {
-          const { data } = await getCurrentUserProfile();
-          setProfile(data);
-          console.log(data);
-          console.log(profile, "profile");
-        } catch (e) {
-          console.error(e);
-        }
-      };
-      fetchData();
-    },[token])
 
     const logout = () => {
       setToken("");
@@ -54,7 +65,7 @@ function Login() {
   return (
     <div>
       
-      <Title>
+      
         {!token ? 
         <a
           href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
@@ -62,7 +73,7 @@ function Login() {
           Login to Spotify
         </a> : <Title onClick={logout}>Logout</Title>
         }
-      </Title>
+     
     </div>
   );
 }

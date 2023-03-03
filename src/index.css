@@ -69,3 +69,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 .icons , .login{
   color: aliceblue;
 }
+
+a{
+  text-decoration: none!important;
+}
