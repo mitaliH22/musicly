@@ -8,7 +8,8 @@ function AlbumCard(props) {
     <>
       <div className="album-card">
         <img src={album.images[0].url} alt="" />
-        <Title color='white'>{album.name}</Title>
+        <Title color="white">{album.name}</Title>
+        <Title color="#a7a7a7">{album.artists[0].name}</Title>
       </div>
     </>
   );
