@@ -19,4 +19,7 @@ export const getCurrentUserProfile = () => axios.get("/me");
 
 export const searchArtist = (ids) => axios.get(`/artists?ids=${ids}`);
 
+export const getAlbums = (ids) => axios.get(`/albums?ids=${ids}`);
+
+
 

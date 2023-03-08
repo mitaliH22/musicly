@@ -20,7 +20,7 @@ function SideBar() {
     <Sidebar>
       <Menu route="/" iconTitle="bi-house-door-fill" menuTitle="Home" />
       <Menu route="/artists" iconTitle="bi-people-fill" menuTitle="Artists" />
-      <Menu route="/" iconTitle="bi-music-note-list" menuTitle="Albums" />
+      <Menu route="/albums" iconTitle="bi-music-note-list" menuTitle="Albums" />
       <Menu route="/" iconTitle="bi-bar-chart-fill" menuTitle="Trends" />
       <Menu
         route="/"

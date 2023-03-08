@@ -17,6 +17,7 @@ const FlexWrapper = styled.div`
 
 const Title = styled.h3`
   font-size: 20px;
+  text-transform: capitalize;
   color: ${(props) => props.color || "palevioletred"};
   margin: 0;
   text-align: ${(props) => props.align || "left"};

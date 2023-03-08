@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
 
 import { Title } from '../Styled';
 import { getCurrentUserProfile } from "../../spotify.js";
@@ -31,30 +30,16 @@ function Login() {
 
       if (token !== '') {
         const fetchData = async () => {
-          console.log(token, "qUERY cALL");
           try {
             const data = await getCurrentUserProfile();
              setProfile(data);
-             console.log(data, "profile");
-             console.log(3);
           } catch (e) {
             console.error(e);
           }
         };
         fetchData();
       }
-      console.log(1, token);
     }, [token]);
-
-     
-
-      //  useEffect(() => {
-      //         console.log(2);
-       
-      //     console.log(token, "qUERY cALL23");
-
-         
-      //  }, [token]);
 
 
 

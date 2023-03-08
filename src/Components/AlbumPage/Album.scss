@@ -1,0 +1,10 @@
+.album-card{
+    flex: 1;
+    &:hover{
+        background: #282828;
+    }
+    img{
+        width: 160px;
+        height: 160px;
+    }
+}
