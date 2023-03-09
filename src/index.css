@@ -45,8 +45,8 @@ code {
 }
 
 .flip-card-back {
- background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+background: rgb(35,59,182);
+background: radial-gradient(circle, rgba(35,59,182,1) 0%, rgba(115,30,47,1) 100%);
   color: white;
   transform: rotateY(180deg);
 }

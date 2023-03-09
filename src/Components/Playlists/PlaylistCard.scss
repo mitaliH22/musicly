@@ -1,0 +1,19 @@
+.playlist-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.75fr));
+    row-gap: 20px;
+    height: 600px;
+    overflow-y: scroll;
+.PlaylistCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover{
+         background: #433e3e;
+    }
+    img{
+        max-width: 100%;
+        width: 250px;
+    }
+}
+}

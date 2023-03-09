@@ -2,13 +2,18 @@ import React from 'react'
 import { Input, Navbar  } from './Styled';
 import {Title} from '../Styled';
 import './NavBar.scss';
-import Auth from '../Login/Auth';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
+  const Navigate = useNavigate();
+  const logout = () =>{
+      window.localStorage.removeItem("token");
+      Navigate('/');
+  }
   return (
     <Navbar>
-      <Link to='/'>
+      <Link to="/">
         <Title align="left">Musicly</Title>
       </Link>
       <div className="search-bar">
@@ -18,7 +23,7 @@ function Nav() {
         </span>
       </div>
       <div>
-        <Auth />
+        <Title onClick={()=>logout()}>Logout</Title>
       </div>
     </Navbar>
   );

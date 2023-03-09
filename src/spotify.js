@@ -9,7 +9,7 @@ axios.defaults.headers["Content-Type"] = "application/json";
 
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {
-    const token = localStorage.getItem("token");;
+    const token = localStorage.getItem("token");
     config.headers.Authorization = 'Bearer ' + token;
     return config;
 });
@@ -21,5 +21,6 @@ export const searchArtist = (ids) => axios.get(`/artists?ids=${ids}`);
 
 export const getAlbums = (ids) => axios.get(`/albums?ids=${ids}`);
 
+export const getPlaylist = () => axios.get("/me/playlists");
 
-
+export const getNewMusic = () => axios.get("/browse/new-releases");

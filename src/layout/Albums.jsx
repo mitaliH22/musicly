@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AlbumCard from '../Components/AlbumPage/AlbumCard';
 import { FlexWrapper, Title } from '../Components/Styled'
-import { getAlbums } from '../spotify';
+import { getAlbums, getMyAlbums } from '../spotify';
 import Layout from './Layout'
 
 function Albums() {
@@ -22,6 +22,8 @@ function Albums() {
         }
 
         fetchAlbums();
+
+        
     }, [])
   return (
     <Layout>

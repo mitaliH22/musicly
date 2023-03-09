@@ -9,7 +9,7 @@ function Layout(props) {
     <>
     <Nav />
     <SideBar />
-    <MusicPlayer />
+    {/* <MusicPlayer /> */}
     <Container>
         {props.children}
     </Container>

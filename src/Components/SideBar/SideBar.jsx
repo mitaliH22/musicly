@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import './SideBar.scss';
 import {Sidebar , Options} from "./Styled"
 
-function Menu(props){
+export function Menu(props){
+
   return (
-    <Link to={props.route} className="sidebar-menu">
+    <Link to={props.route} className="sidebar-menu" >
       <Options>
         <span className="icons">
           <i className={`bi ${props.iconTitle}`}></i>
@@ -18,12 +19,12 @@ function Menu(props){
 function SideBar() {
   return (
     <Sidebar>
-      <Menu route="/" iconTitle="bi-house-door-fill" menuTitle="Home" />
+      <Menu route="/dash" iconTitle="bi-house-door-fill" menuTitle="Home" />
       <Menu route="/artists" iconTitle="bi-people-fill" menuTitle="Artists" />
       <Menu route="/albums" iconTitle="bi-music-note-list" menuTitle="Albums" />
-      <Menu route="/" iconTitle="bi-bar-chart-fill" menuTitle="Trends" />
+      <Menu route="/trends" iconTitle="bi-bar-chart-fill" menuTitle="Trends" />
       <Menu
-        route="/"
+        route="/playlist"
         iconTitle="bi-file-earmark-music-fill"
         menuTitle="Playlist"
       />

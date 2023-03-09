@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.user-profile{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.user-profile img{
+  border-radius: 50%;
+  height: 250px;
+}
+.user-profile div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-profile i{
+  color: white;
+  font-size: 30px;
+}
